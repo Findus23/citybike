@@ -24,7 +24,7 @@ for way in itertools.combinations(list, 2):
               " --lon1={}".format(way[0][1]) + \
               " --lat2={}".format(way[1][0]) + \
               " --lon2={}".format(way[1][1]) + \
-              " --quickest --transport=bicycle --output-text --output-gpx-track --quiet"
+              " --quickest --transport=bicycle --output-gpx-track --quiet"
     success = os.system(command)
     if success == 0:
         os.rename("quickest-track.gpx", "file/" + str(i) + ".gpx")
