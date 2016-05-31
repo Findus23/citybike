@@ -1,0 +1,1859 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API",
+  "osm3s": {
+    "timestamp_osm_base": "2016-05-31T06:29:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 280697212,
+  "lat": 48.1999012,
+  "lon": 16.3682242,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Treitlstraße",
+    "network": "Citybike Wien",
+    "ref": "401",
+    "start_date": "2006-09-07",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 282330002,
+  "lat": 48.2352845,
+  "lon": 16.3587100,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "26",
+    "name": "Spittelau U4/U6",
+    "network": "Citybike Wien",
+    "ref": "906",
+    "start_date": "2004-07-06",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298191832,
+  "lat": 48.2117839,
+  "lon": 16.3767071,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Schwedenplatz",
+    "network": "Citybike Wien",
+    "ref": "104",
+    "start_date": "2003-08-22",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 298198687,
+  "lat": 48.2104051,
+  "lon": 16.3560535,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "35",
+    "name": "Friedrich Schmidtplatz",
+    "network": "Citybike Wien",
+    "ref": "108",
+    "start_date": "2004-04-13",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 298203272,
+  "lat": 48.2026513,
+  "lon": 16.3696340,
+  "tags": {
+    "addr:city": "Wien",
+    "addr:country": "AT",
+    "addr:district": "01. Innere Stadt",
+    "addr:postcode": "1010",
+    "amenity": "bicycle_rental",
+    "capacity": "18",
+    "name": "Oper",
+    "network": "Citybike Wien",
+    "ref": "111",
+    "start_date": "2004-07-07",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298203273,
+  "lat": 48.2021732,
+  "lon": 16.3713102,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "16",
+    "name": "Kärntnerring",
+    "network": "Citybike Wien",
+    "ref": "112",
+    "start_date": "2003-10-15",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298204074,
+  "lat": 48.2158181,
+  "lon": 16.3861238,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "15",
+    "name": "Nepomukgasse",
+    "network": "Citybike Wien",
+    "ref": "202",
+    "start_date": "2005-07-11",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298204825,
+  "lat": 48.2157250,
+  "lon": 16.3796676,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "14",
+    "name": "Karmeliterplatz",
+    "network": "Citybike Wien",
+    "ref": "203",
+    "start_date": "2005-09-28",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 298205982,
+  "lat": 48.2194952,
+  "lon": 16.3823737,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Novaragasse",
+    "network": "Citybike Wien",
+    "ref": "205",
+    "start_date": "2008-05-19",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298205984,
+  "lat": 48.2172844,
+  "lon": 16.4061948,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "40",
+    "name": "Messeplatz",
+    "network": "Citybike Wien",
+    "ref": "207",
+    "start_date": "2008-05-21",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298205986,
+  "lat": 48.2143793,
+  "lon": 16.4143777,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Krieau",
+    "network": "Citybike Wien",
+    "ref": "208",
+    "start_date": "2008-05-22",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298205988,
+  "lat": 48.2100328,
+  "lon": 16.4212474,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "40",
+    "name": "Stadion Center",
+    "network": "Citybike Wien",
+    "ref": "209",
+    "start_date": "2008-05-19",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298208903,
+  "lat": 48.2106449,
+  "lon": 16.3903168,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "28",
+    "name": "Radetzkyplatz",
+    "network": "Citybike Wien",
+    "ref": "302",
+    "start_date": "2004-07-02",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298211716,
+  "lat": 48.1942063,
+  "lon": 16.3866407,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "10",
+    "name": "Fasanplatz",
+    "network": "Citybike Wien",
+    "ref": "304",
+    "start_date": "2004-11-16",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 298214099,
+  "lat": 48.2034559,
+  "lon": 16.3897468,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "18",
+    "name": "Salmgasse",
+    "network": "Citybike Wien",
+    "ref": "305",
+    "start_date": "2005-04-28",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298352633,
+  "lat": 48.1926241,
+  "lon": 16.3546889,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "16",
+    "name": "Pilgramgasse U4",
+    "network": "Citybike Wien",
+    "ref": "501",
+    "start_date": "2004-04-23",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298352636,
+  "lat": 48.1884957,
+  "lon": 16.3439838,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "30",
+    "name": "Margaretengürtel U4",
+    "network": "Citybike Wien",
+    "ref": "503",
+    "start_date": "2004-08-06",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298352637,
+  "lat": 48.1839003,
+  "lon": 16.3458988,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Arbeitergasse",
+    "network": "Citybike Wien",
+    "ref": "504",
+    "start_date": "2004-06-05",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298356273,
+  "lat": 48.1896278,
+  "lon": 16.3511069,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Reinprechtsdorfer Brücke",
+    "network": "Citybike Wien",
+    "ref": "505",
+    "start_date": "2004-07-23",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298356274,
+  "lat": 48.1872990,
+  "lon": 16.3638975,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "26",
+    "name": "Hartmanngasse",
+    "network": "Citybike Wien",
+    "ref": "506",
+    "start_date": "2005-07-28",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298356925,
+  "lat": 48.2024359,
+  "lon": 16.3610715,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "36",
+    "name": "Museumsplatz",
+    "network": "Citybike Wien",
+    "ref": "701",
+    "start_date": "2003-12-10",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298357578,
+  "lat": 48.2036893,
+  "lon": 16.3373022,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Burggasse U6",
+    "network": "Citybike Wien",
+    "ref": "702",
+    "start_date": "2004-06-04",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298359901,
+  "lat": 48.2022270,
+  "lon": 16.3520602,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "23",
+    "name": "Siebensternplatz",
+    "network": "Citybike Wien",
+    "operator": "Gewista-Werbegesellschaft m.b.H.",
+    "ref": "705",
+    "start_date": "2007-09-20",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 298359904,
+  "lat": 48.2073571,
+  "lon": 16.3432759,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "10",
+    "name": "Schottenfeldgasse",
+    "network": "Citybike Wien",
+    "ref": "703",
+    "start_date": "2004-04-16",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298361424,
+  "lat": 48.2152099,
+  "lon": 16.3552061,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Frankhplatz",
+    "network": "Citybike Wien",
+    "ref": "904",
+    "start_date": "2004-04-14",
+    "website": "http://www.citybikewien.at/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 298365070,
+  "lat": 48.1751977,
+  "lon": 16.3316623,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "23",
+    "name": "Vivenotgasse",
+    "network": "Citybike Wien",
+    "ref": "1203",
+    "start_date": "2007-04-06",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298368288,
+  "lat": 48.2166255,
+  "lon": 16.3415058,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "23",
+    "name": "Alser Straße U6",
+    "network": "Citybike Wien",
+    "ref": "1701",
+    "start_date": "2004-04-15",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298369943,
+  "lat": 48.2299676,
+  "lon": 16.3716045,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "27",
+    "name": "Wallensteinplatz",
+    "network": "Citybike Wien",
+    "ref": "2001",
+    "start_date": "2005-05-02",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 298371050,
+  "lat": 48.2351256,
+  "lon": 16.3698312,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "26",
+    "name": "Jägerstraße U6",
+    "network": "Citybike Wien",
+    "ref": "2002",
+    "start_date": "2004-07-16",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 302608914,
+  "lat": 48.2374910,
+  "lon": 16.3803331,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "30",
+    "name": "Hellwagstraße",
+    "network": "Citybike Wien",
+    "ref": "2003",
+    "start_date": "2008-11-11",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 316774253,
+  "lat": 48.2178535,
+  "lon": 16.3731379,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Obere Donaustraße",
+    "network": "Citybike Wien",
+    "ref": "204",
+    "start_date": "2008-12-02",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 699656850,
+  "lat": 48.2179290,
+  "lon": 16.3322657,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "16",
+    "name": "Elterleinplatz",
+    "network": "Citybike Wien",
+    "ref": "1702",
+    "start_date": "2010-04-16",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 798858098,
+  "lat": 48.2420356,
+  "lon": 16.3847976,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "35",
+    "name": "Millennium Tower",
+    "network": "Citybike Wien",
+    "ref": "2005",
+    "start_date": "2010-07-02",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 1092655991,
+  "lat": 48.2092373,
+  "lon": 16.3334114,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "32",
+    "name": "Hofferplatz",
+    "network": "Citybike Wien",
+    "ref": "1602",
+    "start_date": "2010-08-09",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1092658516,
+  "lat": 48.1961817,
+  "lon": 16.3301224,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Schmelzbrücke",
+    "network": "Citybike Wien",
+    "ref": "1507",
+    "start_date": "2010-08-09",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1211592357,
+  "lat": 48.1968413,
+  "lon": 16.3384800,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "40",
+    "name": "Westbahnhof Europaplatz",
+    "network": "Citybike Wien",
+    "ref": "1501",
+    "start_date": "2011-03-15",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1267543318,
+  "lat": 48.2441354,
+  "lon": 16.3792033,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "27",
+    "name": "Friedrich Engels Platz",
+    "network": "Citybike Wien",
+    "ref": "2006",
+    "start_date": "2010-08-30",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "no",
+    "wheelchair:description": "Ausschließlich Fahrräder zum treten mit den Füßen vorhanden. Keine Hand-Bikes."
+  }
+},
+{
+  "type": "node",
+  "id": 1268445013,
+  "lat": 48.1892714,
+  "lon": 16.3383556,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "27",
+    "name": "Gumpendorfer Gürtel",
+    "network": "Citybike Wien",
+    "ref": "602",
+    "start_date": "2010-11-12",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1268445027,
+  "lat": 48.2193207,
+  "lon": 16.3524490,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Sensengasse",
+    "network": "Citybike Wien",
+    "ref": "907",
+    "start_date": "2010-11-17",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1268445029,
+  "lat": 48.1903383,
+  "lon": 16.3186502,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "31",
+    "name": "Technisches Museum",
+    "network": "Citybike Wien",
+    "ref": "1401",
+    "start_date": "2010-11-24",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1268445032,
+  "lat": 48.1983867,
+  "lon": 16.3190296,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "28",
+    "name": "Meiselmarkt",
+    "network": "Citybike Wien",
+    "ref": "1508",
+    "start_date": "2010-11-23",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1268445043,
+  "lat": 48.1908889,
+  "lon": 16.3258588,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "35",
+    "name": "Schwendermarkt",
+    "network": "Citybike Wien",
+    "ref": "1506",
+    "start_date": "2010-08-19",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1268463814,
+  "lat": 48.1930795,
+  "lon": 16.3339027,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "22",
+    "name": "Turnergasse",
+    "network": "Citybike Wien",
+    "ref": "1505",
+    "start_date": "2010-10-07",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1268463815,
+  "lat": 48.2100318,
+  "lon": 16.3279163,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "25",
+    "name": "Richard-Wagner-Platz",
+    "network": "Citybike Wien",
+    "ref": "1603",
+    "start_date": "2010-08-26",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1268463817,
+  "lat": 48.2195986,
+  "lon": 16.3264699,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Rosensteingasse",
+    "network": "Citybike Wien",
+    "ref": "1704",
+    "start_date": "2010-09-16",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1268463818,
+  "lat": 48.2218906,
+  "lon": 16.3437129,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "31",
+    "name": "Michelbeuern",
+    "network": "Citybike Wien",
+    "ref": "1803",
+    "start_date": "2010-10-05",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1268463819,
+  "lat": 48.2366126,
+  "lon": 16.3487420,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "26",
+    "name": "Gymnasiumstraße",
+    "network": "Citybike Wien",
+    "ref": "1901",
+    "start_date": "2010-09-17",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1396870561,
+  "lat": 48.1928408,
+  "lon": 16.3670994,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "19",
+    "name": "Mayerhofgasse",
+    "network": "Citybike Wien",
+    "ref": "402",
+    "start_date": "2011-07-28",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1433630950,
+  "lat": 48.2250977,
+  "lon": 16.3548114,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Markthalle Alsergrund",
+    "network": "Citybike Wien",
+    "ref": "909",
+    "start_date": "2011-09-20",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1433630951,
+  "lat": 48.1852185,
+  "lon": 16.3529473,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "26",
+    "name": "Siebenbrunnenplatz",
+    "network": "Citybike Wien",
+    "ref": "507",
+    "start_date": "2011-09-19",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1474164398,
+  "lat": 48.2107593,
+  "lon": 16.3188093,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Schuhmeierplatz",
+    "network": "Citybike Wien",
+    "ref": "1606",
+    "start_date": "2011-10-18",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1517587897,
+  "lat": 48.2257165,
+  "lon": 16.3442147,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Gertrudplatz",
+    "network": "Citybike Wien",
+    "ref": "1804",
+    "start_date": "2011-11-23",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1534940032,
+  "lat": 48.2228810,
+  "lon": 16.3285279,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Blumengasse",
+    "network": "Citybike Wien",
+    "ref": "1707",
+    "start_date": "2011-12-01",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1539148013,
+  "lat": 48.2263879,
+  "lon": 16.3513022,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "23",
+    "name": "Löblichgasse",
+    "network": "Citybike Wien",
+    "ref": "911",
+    "start_date": "2011-11-30",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1539148015,
+  "lat": 48.2082487,
+  "lon": 16.3381718,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "28",
+    "name": "Thaliastraße U6",
+    "network": "Citybike Wien",
+    "ref": "1604",
+    "start_date": "2011-12-09",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1557975660,
+  "lat": 48.1952613,
+  "lon": 16.3631916,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Heumühlgasse",
+    "network": "Citybike Wien",
+    "ref": "404",
+    "start_date": "2011-12-16",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1557975661,
+  "lat": 48.1813784,
+  "lon": 16.3580132,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "27",
+    "name": "Matzleinsdorfer Platz",
+    "network": "Citybike Wien",
+    "ref": "508",
+    "start_date": "2011-12-19",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1557975667,
+  "lat": 48.2118351,
+  "lon": 16.3117699,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "39",
+    "name": "Ottakring U3",
+    "network": "Citybike Wien",
+    "ref": "1605",
+    "start_date": "2011-12-21",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1679908514,
+  "lat": 48.2338218,
+  "lon": 16.3832501,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Traisengasse",
+    "network": "Citybike Wien",
+    "ref": "2004",
+    "start_date": "2009-07-13",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1725948362,
+  "lat": 48.2291768,
+  "lon": 16.3595424,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "22",
+    "name": "Althanstraße",
+    "network": "Citybike Wien",
+    "ref": "910",
+    "start_date": "2012-04-12",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1725948372,
+  "lat": 48.1966525,
+  "lon": 16.3952315,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Juchgasse",
+    "network": "Citybike Wien",
+    "ref": "309",
+    "start_date": "2012-04-11",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1733302952,
+  "lat": 48.2184920,
+  "lon": 16.3903012,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "38",
+    "name": "Heinestraße",
+    "network": "Citybike Wien",
+    "ref": "201",
+    "start_date": "2004-10-22",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1733302954,
+  "lat": 48.2178504,
+  "lon": 16.3920457,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "40",
+    "name": "Praterstern",
+    "network": "Citybike Wien",
+    "ref": "206",
+    "start_date": "2010-03-24",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1748710178,
+  "lat": 48.2212511,
+  "lon": 16.3600640,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Bauernfeldplatz",
+    "network": "Citybike Wien",
+    "ref": "908",
+    "start_date": "2012-05-04",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1748710179,
+  "lat": 48.2203789,
+  "lon": 16.3563440,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Boltzmanngasse",
+    "network": "Citybike Wien",
+    "ref": "905",
+    "start_date": "2004-04-16",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1748710180,
+  "lat": 48.2261513,
+  "lon": 16.3619463,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Julius-Tandler-Platz",
+    "network": "Citybike Wien",
+    "ref": "902",
+    "start_date": "2004-04-14",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1748710181,
+  "lat": 48.2227610,
+  "lon": 16.3673890,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "28",
+    "name": "Roßauer Lände U4",
+    "network": "Citybike Wien",
+    "ref": "903",
+    "start_date": "2004-04-15",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1748710182,
+  "lat": 48.2159740,
+  "lon": 16.3722129,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "21",
+    "name": "Schottenring U4",
+    "network": "Citybike Wien",
+    "ref": "103",
+    "start_date": "2003-05-19",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1748710183,
+  "lat": 48.2145911,
+  "lon": 16.3613730,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "36",
+    "name": "Sigmund Freud Park",
+    "network": "Citybike Wien",
+    "ref": "901",
+    "start_date": "2003-06-10",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1748710184,
+  "lat": 48.2085316,
+  "lon": 16.3740817,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "18",
+    "name": "Stephansplatz",
+    "network": "Citybike Wien",
+    "ref": "101",
+    "start_date": "2003-12-26",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1748710185,
+  "lat": 48.2241764,
+  "lon": 16.3490488,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Währinger Straße U6",
+    "network": "Citybike Wien",
+    "ref": "1801",
+    "start_date": "2004-06-18",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1764282543,
+  "lat": 48.2100266,
+  "lon": 16.3603168,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Rathausplatz",
+    "network": "Citybike Wien",
+    "ref": "110",
+    "start_date": "2003-09-19",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1831577915,
+  "lat": 48.1985715,
+  "lon": 16.3509278,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Kollergerngasse",
+    "network": "Citybike Wien",
+    "ref": "601",
+    "start_date": "2004-11-30",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1831577919,
+  "lat": 48.1967501,
+  "lon": 16.3440243,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "14",
+    "name": "Webgasse",
+    "network": "Citybike Wien",
+    "ref": "707",
+    "start_date": "2005-12-02",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1831577920,
+  "lat": 48.2060064,
+  "lon": 16.3565246,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Weghuberpark",
+    "network": "Citybike Wien",
+    "ref": "706",
+    "start_date": "2005-07-29",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1841612498,
+  "lat": 48.1859341,
+  "lon": 16.3199585,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "16",
+    "name": "Schönbrunner Brücke",
+    "network": "Citybike Wien",
+    "ref": "1503",
+    "start_date": "2007-04-26",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1841612499,
+  "lat": 48.1868322,
+  "lon": 16.3142204,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "40",
+    "name": "Schönbrunn Haupteingang",
+    "network": "Citybike Wien",
+    "ref": "1301",
+    "start_date": "2007-04-26",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1844562383,
+  "lat": 48.2317273,
+  "lon": 16.3531237,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "17",
+    "name": "Nussdorfer Straße U6",
+    "network": "Citybike Wien",
+    "ref": "1802",
+    "start_date": "2004-07-29",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1844601122,
+  "lat": 48.2095274,
+  "lon": 16.3660841,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "18",
+    "name": "Fahnengasse",
+    "network": "Citybike Wien",
+    "ref": "102",
+    "start_date": "2003-05-19",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "limited",
+    "wheelchair:description": "Leider keine Handbikes"
+  }
+},
+{
+  "type": "node",
+  "id": 1844601141,
+  "lat": 48.2114764,
+  "lon": 16.3824548,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Julius Raab Platz",
+    "network": "Citybike Wien",
+    "ref": "105",
+    "start_date": "2004-02-02",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1844601151,
+  "lat": 48.2056843,
+  "lon": 16.3960339,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "27",
+    "name": "Kundmanngasse",
+    "network": "Citybike Wien",
+    "ref": "307",
+    "start_date": "2011-09-21",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1844601163,
+  "lat": 48.2067479,
+  "lon": 16.3804773,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Stadtpark Stubenring",
+    "network": "Citybike Wien",
+    "ref": "106",
+    "start_date": "2003-08-14",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1844601179,
+  "lat": 48.2065417,
+  "lon": 16.3604994,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "16",
+    "name": "Volksgarten",
+    "network": "Citybike Wien",
+    "ref": "107",
+    "start_date": "2003-08-29",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1844601186,
+  "lat": 48.1992219,
+  "lon": 16.3943417,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Wassergasse",
+    "network": "Citybike Wien",
+    "ref": "303",
+    "start_date": "2004-11-16",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 1845158954,
+  "lat": 48.2152594,
+  "lon": 16.3465233,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "12",
+    "name": "Alser Straße/Feldgasse",
+    "network": "Citybike Wien",
+    "ref": "801",
+    "start_date": "2004-07-15",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1845158957,
+  "lat": 48.2121173,
+  "lon": 16.3391446,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "25",
+    "name": "Josefstädter Straße U6",
+    "network": "Citybike Wien",
+    "ref": "1601",
+    "start_date": "2004-04-15",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1845177196,
+  "lat": 48.1946329,
+  "lon": 16.3771236,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Arbeiterkammer",
+    "network": "Citybike Wien",
+    "ref": "306",
+    "start_date": "2011-11-14",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1845177197,
+  "lat": 48.1963439,
+  "lon": 16.3574628,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "17",
+    "name": "Falco Stiege",
+    "network": "Citybike Wien",
+    "ref": "502",
+    "start_date": "2004-04-17",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1845177198,
+  "lat": 48.2033867,
+  "lon": 16.3769235,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Johannesgasse",
+    "network": "Citybike Wien",
+    "ref": "109",
+    "start_date": "2003-10-15",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1845177199,
+  "lat": 48.1988716,
+  "lon": 16.3770673,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "20",
+    "name": "Schwarzenbergplatz",
+    "network": "Citybike Wien",
+    "ref": "301",
+    "start_date": "2003-12-16",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1845177200,
+  "lat": 48.2010504,
+  "lon": 16.3377087,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "17",
+    "name": "Urban Loritz Platz",
+    "network": "Citybike Wien",
+    "ref": "704",
+    "start_date": "2004-04-16",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1845179705,
+  "lat": 48.1842629,
+  "lon": 16.3338929,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "25",
+    "name": "Längenfeldgasse",
+    "network": "Citybike Wien",
+    "ref": "1201",
+    "start_date": "2007-04-05",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1845179711,
+  "lat": 48.1802411,
+  "lon": 16.3307746,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "15",
+    "name": "Reschgasse",
+    "network": "Citybike Wien",
+    "ref": "1202",
+    "start_date": "2007-04-05",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1861957435,
+  "lat": 48.2213326,
+  "lon": 16.3345505,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Dornerplatz",
+    "network": "Citybike Wien",
+    "ref": "1703",
+    "start_date": "2010-10-28",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1890501996,
+  "lat": 48.1968331,
+  "lon": 16.3230123,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "25",
+    "name": "Selzergasse",
+    "network": "Citybike Wien",
+    "ref": "1513",
+    "start_date": "2012-08-29",
+    "website": "http://www.citybikewien.at/"
+  }
+},
+{
+  "type": "node",
+  "id": 1960753178,
+  "lat": 48.1896955,
+  "lon": 16.3613234,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "28",
+    "name": "Mittersteig",
+    "network": "Citybike Wien",
+    "ref": "509",
+    "start_date": "2012-10-10",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1988874698,
+  "lat": 48.2025620,
+  "lon": 16.3297827,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "32",
+    "name": "Markgraf-Rüdiger-Straße",
+    "network": "Citybike Wien",
+    "ref": "1509",
+    "start_date": "2012-10-24",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1990694189,
+  "lat": 48.2016592,
+  "lon": 16.3844809,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "30",
+    "name": "Bahngasse",
+    "network": "Citybike Wien",
+    "ref": "308",
+    "start_date": "2012-10-31",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 1990694190,
+  "lat": 48.1862045,
+  "lon": 16.3755016,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "39",
+    "name": "Hauptbahnhof",
+    "network": "Citybike Wien",
+    "ref": "1002",
+    "start_date": "2012-10-31",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2071269016,
+  "lat": 48.1908858,
+  "lon": 16.3757404,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "21",
+    "name": "Sankt-Elisabeth-Platz",
+    "network": "Citybike Wien",
+    "ref": "403",
+    "start_date": "2012-12-14",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2071272353,
+  "lat": 48.1999329,
+  "lon": 16.3270836,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "25",
+    "name": "Schweglerstraße",
+    "network": "Citybike Wien",
+    "ref": "1515",
+    "start_date": "2012-12-17",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2322786355,
+  "lat": 48.1978207,
+  "lon": 16.3376044,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "40",
+    "name": "Westbahnhof Felberstraße",
+    "network": "Citybike Wien",
+    "ref": "1514",
+    "start_date": "2013",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2322786356,
+  "lat": 48.1941002,
+  "lon": 16.3184258,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "25",
+    "name": "Wieningerplatz",
+    "network": "Citybike Wien",
+    "ref": "1511",
+    "start_date": "2013-05-15",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2323067884,
+  "lat": 48.2120505,
+  "lon": 16.3608279,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "38",
+    "name": "Universitätsring",
+    "network": "Citybike Wien",
+    "ref": "113",
+    "start_date": "2013-05",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2327282792,
+  "lat": 48.1929379,
+  "lon": 16.3984333,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "28",
+    "name": "Petrusgasse",
+    "network": "Citybike Wien",
+    "ref": "311",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2356963308,
+  "lat": 48.2139179,
+  "lon": 16.3307501,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "name": "Brestelgasse",
+    "network": "Citybike Wien",
+    "ref": "1609",
+    "start_date": "2013-06",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2356963314,
+  "lat": 48.2058219,
+  "lon": 16.3851547,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "28",
+    "name": "Wien Mitte",
+    "network": "Citybike Wien",
+    "ref": "313",
+    "start_date": "2013-06-19",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2463127365,
+  "lat": 48.2285672,
+  "lon": 16.3350962,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "24",
+    "fixme": "exact location",
+    "name": "Aumannplatz",
+    "network": "Citybike Wien",
+    "ref": "1807",
+    "start_date": "2013-08",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2470474246,
+  "lat": 48.1957184,
+  "lon": 16.3370707,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "35",
+    "name": "Westbahnhof Gerstnerstraße",
+    "network": "Citybike Wien",
+    "ref": "1516",
+    "start_date": "2013-09-24",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2483266081,
+  "lat": 48.2191636,
+  "lon": 16.3662840,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "40",
+    "name": "Berggasse",
+    "network": "Citybike Wien",
+    "ref": "912",
+    "start_date": "2013-10",
+    "website": "http://www.citybikewien.at",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 2483266084,
+  "lat": 48.2140647,
+  "lon": 16.3357714,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "25",
+    "name": "Yppenplatz",
+    "network": "Citybike Wien",
+    "ref": "1607",
+    "start_date": "2013-10-04",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2508399538,
+  "lat": 48.2308231,
+  "lon": 16.3295166,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "26",
+    "fixme": "exact location",
+    "name": "Gersthof",
+    "network": "Citybike Wien",
+    "ref": "1806",
+    "start_date": "2013-08",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2508399539,
+  "lat": 48.2130136,
+  "lon": 16.4073740,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "40",
+    "name": "Südportalstraße",
+    "network": "Citybike Wien",
+    "ref": "211",
+    "start_date": "2013-10-04",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2556173247,
+  "lat": 48.2103931,
+  "lon": 16.3440183,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "32",
+    "name": "Albertgasse",
+    "network": "Citybike Wien",
+    "ref": "802",
+    "start_date": "2013-11-27",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2583016829,
+  "lat": 48.2059136,
+  "lon": 16.3308187,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "27",
+    "name": "Fröbelgasse",
+    "network": "Citybike Wien",
+    "ref": "1610",
+    "start_date": "2013",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2852663980,
+  "lat": 48.2268106,
+  "lon": 16.3652862,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "26",
+    "name": "Friedensbrücke",
+    "network": "Citybike Wien",
+    "ref": "913",
+    "start_date": "2014-05-09",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 2930839305,
+  "lat": 48.2233111,
+  "lon": 16.3999972,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "33",
+    "name": "Radingerstraße",
+    "network": "Citybike Wien",
+    "ref": "212",
+    "start_date": "2014-06-18",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 3112545860,
+  "lat": 48.2106070,
+  "lon": 16.3731352,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "26",
+    "name": "Hoher Markt",
+    "network": "Citybike Wien",
+    "ref": "114",
+    "start_date": "2014-10-03",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 3207461110,
+  "lat": 48.2172273,
+  "lon": 16.3371272,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "26",
+    "name": "Palffygasse",
+    "network": "Citybike Wien",
+    "ref": "1708",
+    "start_date": "2014-11-25",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 3208698842,
+  "lat": 48.1851527,
+  "lon": 16.3740066,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "40",
+    "name": "Hauptbahnhof West",
+    "network": "Citybike Wien",
+    "ref": "1001",
+    "start_date": "2014-11",
+    "website": "http://www.citybikewien.at"
+  }
+},
+{
+  "type": "node",
+  "id": 3708315296,
+  "lat": 48.2233126,
+  "lon": 16.3153356,
+  "tags": {
+    "amenity": "bicycle_rental",
+    "capacity": "30",
+    "name": "Hernals S45",
+    "network": "Citybike Wien",
+    "ref": "1706",
+    "start_date": "2015-08",
+    "website": "http://www.citybikewien.at"
+  }
+}
+
+  ]
+}
