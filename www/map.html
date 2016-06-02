@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>CityBikes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.css"/>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        html, body, #map {
+            height: 100%;
+        }
+    </style>
+
+</head>
+<body>
+<div id="map"></div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="leaflet-src.js"></script>
+<script>
+
+    var map = L.map('map').setView([48.51579416571888, 15.6255304813385], 16);
+    var layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    var LeafIcon = L.Icon.extend({
+        options: {
+            iconUrl: "citybike.png",
+//            shadowUrl: 'leaf-shadow.png',
+//         //   iconSize:     [38, 95],
+//            shadowSize:   [50, 64],
+            iconAnchor: [16, 16],
+            popupAnchor: [0, -16]
+        }
+    });
+
+
+    function highlightFeature(e) {
+        var layer = e.target;
+
+        layer.setStyle({
+            weight: 10,
+            color: '#666'
+        });
+
+        if (!L.Browser.ie && !L.Browser.opera) {
+            layer.bringToFront();
+        }
+    }
+    function resetHighlight(e) {
+        lines.resetStyle(e.target);
+    }
+    function onEachFeature(feature, layer) {
+        layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight
+        });
+
+        //     layer._leaflet_id = feature.properties.id;
+    }
+    var style = {
+        weight: 5
+    };
+
+    var lines = L.geoJson(null, {
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup(feature.properties.nodes[0] + " - " + feature.properties.nodes[1]);
+            onEachFeature(feature, layer);
+        },
+        style: style
+    });
+    var mapLayers = {
+        'Standard': layer
+    };
+
+    $.ajax({
+        dataType: "json",
+        url: "test.json",
+        success: function (data) {
+            lines.addData(data);
+            lines.addTo(map);
+        }
+    });
+
+
+    var stations = L.geoJson(null, {
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {icon: new LeafIcon()});
+        },
+        onEachFeature: function (feature, layer) {
+//            layer._leaflet_id = feature.properties.ref;
+//            console.log(feature.properties.ref);
+
+            layer.bindPopup(feature.properties.name);
+        }
+    });
+
+    $.ajax({
+        dataType: "json",
+        url: "stations.json",
+        success: function (data) {
+            stations.addData(data);
+            stations.addTo(map);
+            map.fitBounds(stations.getBounds());
+        }
+    });
+    var overlays = {
+        "Wege": lines,
+        "Stationen": stations
+    };
+    var control = L.control.layers(mapLayers, overlays, {collapsed: false}).addTo(map);
+
+
+</script>
+</html>

@@ -39,13 +39,15 @@ LIMIT 3
             feature = geojson["features"][0]
             del feature["properties"]["desc"], feature["properties"]["name"]  # Überreste von GPX entfernen
             feature["properties"]["nodes"] = [way[1], way[2]]
+            feature["properties"]["id"] = way[0]
             geojsonFeatures.append(feature)
         else:
             print(str(way[0]) + ": Dup")
 
-geojsonComplete = {}
-geojsonComplete["type"] = "FeatureCollection"
-geojsonComplete["features"] = geojsonFeatures
+geojsonComplete = {
+    "type": "FeatureCollection",
+    "features": geojsonFeatures
+}
 
-with open('test.json', 'w') as outfile:
+with open('www/test.json', 'w') as outfile:
     json.dump(geojsonComplete, outfile, indent=4)
