@@ -2,3 +2,5 @@
 file/
 gpxlen.py
 quickest*
+config.py
+__pycache__

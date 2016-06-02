@@ -6,12 +6,13 @@ import xml.dom.minidom
 from pprint import pprint
 import MySQLdb
 
+from config import database
 from gpxlen import getTrackLength
 
-db = MySQLdb.connect(host="localhost",  # your host, usually localhost
-                     user="root",  # your username
-                     passwd="Findus",  # your password
-                     db="citybike")  # name of the data base
+db = MySQLdb.connect(database["host"],
+                     database["user"],
+                     database["passwd"],
+                     database["db"])
 
 cur = db.cursor()
 

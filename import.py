@@ -2,15 +2,16 @@
 import json
 import sys
 from pprint import pprint
+from config import database
 
 import MySQLdb
 
 try:
 
-    db = MySQLdb.connect(host="localhost",  # your host, usually localhost
-                         user="root",  # your username
-                         passwd="Findus",  # your password
-                         db="citybike")  # name of the data base
+    db = MySQLdb.connect(database["host"],
+                         database["user"],
+                         database["passwd"],
+                         database["db"])
 
     cur = db.cursor()
 
