@@ -20,7 +20,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="leaflet-src.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.js"></script>
 <script>
 
     var map = L.map('map').setView([48.51579416571888, 15.6255304813385], 16);
@@ -61,8 +61,7 @@
             mouseover: highlightFeature,
             mouseout: resetHighlight
         });
-
-        //     layer._leaflet_id = feature.properties.id;
+        layer._leaflet_id = feature.properties.id;
     }
     var style = {
         weight: 5
