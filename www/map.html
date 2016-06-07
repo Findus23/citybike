@@ -27,56 +27,22 @@
     var layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(map);
+    });
+    var emptyLayer = L.tileLayer("").addTo(map);
 
-    var LeafIcon = L.Icon.extend({
+    var citybikeIcon = L.Icon.extend({
         options: {
             iconUrl: "citybike.png",
-//            shadowUrl: 'leaf-shadow.png',
-//         //   iconSize:     [38, 95],
-//            shadowSize:   [50, 64],
             iconAnchor: [16, 16],
             popupAnchor: [0, -16]
         }
     });
-
-
-    function highlightFeature(e) {
-        var layer = e.target;
-
-        layer.setStyle({
-            weight: 10,
-            color: '#666'
-        });
-
-        if (!L.Browser.ie && !L.Browser.opera) {
-            layer.bringToFront();
+    var altCitybikeIcon = citybikeIcon.extend({
+        options: {
+            iconUrl: "citybikeAlt.png"
         }
-    }
-    function resetHighlight(e) {
-        lines.resetStyle(e.target);
-    }
-    function onEachFeature(feature, layer) {
-        layer.on({
-            mouseover: highlightFeature,
-            mouseout: resetHighlight
-        });
-        layer._leaflet_id = feature.properties.id;
-    }
-    var style = {
-        weight: 5
-    };
-
-    var lines = L.geoJson(null, {
-        onEachFeature: function (feature, layer) {
-            layer.bindPopup(feature.properties.nodes[0] + " - " + feature.properties.nodes[1]);
-            onEachFeature(feature, layer);
-        },
-        style: style
     });
-    var mapLayers = {
-        'Standard': layer
-    };
+
 
     $.ajax({
         dataType: "json",
@@ -86,17 +52,19 @@
             lines.addTo(map);
         }
     });
+    var stations = {};
 
-
-    var stations = L.geoJson(null, {
+    var stationLayer = L.geoJson(null, {
         pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {icon: new LeafIcon()});
+            return L.marker(latlng, {icon: new citybikeIcon()});
         },
         onEachFeature: function (feature, layer) {
 //            layer._leaflet_id = feature.properties.ref;
 //            console.log(feature.properties.ref);
-
+//            console.log(feature.properties);
+            stations[feature.properties.ref] = feature.properties.name;
             layer.bindPopup(feature.properties.name);
+            layer._leaflet_id = 10000 + feature.properties.ref;
         }
     });
 
@@ -104,14 +72,60 @@
         dataType: "json",
         url: "stations.json",
         success: function (data) {
-            stations.addData(data);
-            stations.addTo(map);
-            map.fitBounds(stations.getBounds());
+            stationLayer.addData(data);
+            stationLayer.addTo(map);
+            map.fitBounds(stationLayer.getBounds());
         }
     });
+
+    function onEachFeature(feature, layer) {
+        layer.on({
+            mouseover: function (e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 10,
+                    color: '#666'
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                stationLayer.getLayer(10000 + layer.nodes[0]).setIcon(new altCitybikeIcon());
+                stationLayer.getLayer(10000 + layer.nodes[1]).setIcon(new altCitybikeIcon());
+            },
+            mouseout: function (e) {
+                lines.resetStyle(e.target);
+                stationLayer.getLayer(10000 + layer.nodes[0]).setIcon(new citybikeIcon());
+                stationLayer.getLayer(10000 + layer.nodes[1]).setIcon(new citybikeIcon());
+
+            }
+        });
+
+    }
+
+
+    var lines = L.geoJson(null, {
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup(stations[feature.properties.nodes[0]] + " - " + stations[feature.properties.nodes[1]]);
+            onEachFeature(feature, layer);
+            layer.nodes = feature.properties.nodes;
+//            layer._leaflet_id = feature.properties.id;
+
+        },
+        style: {
+            weight: 5
+        }
+    });
+
+
+    var mapLayers = {
+        'Standard': layer,
+        "Leer": emptyLayer
+    };
     var overlays = {
         "Wege": lines,
-        "Stationen": stations
+        "Stationen": stationLayer
     };
     var control = L.control.layers(mapLayers, overlays, {collapsed: false}).addTo(map);
 

@@ -15,7 +15,7 @@ try:
 
     cur = db.cursor()
 
-    with open('stations.json') as data_file:
+    with open('stationLayer.json') as data_file:
         data = json.load(data_file)
     for station in data["elements"]:
         if station["type"] == "node":

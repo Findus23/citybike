@@ -38,5 +38,5 @@ geojsonComplete = {
     "features": features
 }
 # print(json.dumps(geojsonComplete, indent=4))
-with open('stations.json', 'w') as outfile:
+with open('stationLayer.json', 'w') as outfile:
     json.dump(geojsonComplete, outfile, indent=4)
