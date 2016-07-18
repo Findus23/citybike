@@ -21,10 +21,10 @@ cursor = db.cursor()
 cursor.execute("SELECT lat, lon,ref FROM stationen ORDER BY ref DESC")  # Liste der Stationen
 stations = cursor.fetchall()
 routeID = 1
-totalCombinations = 7260  # 212 über 2
+totalCombinations = 14641  # 212 über 2
 pbar = tqdm(total=totalCombinations)
 
-for way in itertools.combinations(stations, 2):
+for way in itertools.product(stations, repeat=2):
     command = [
         "routino-router",
         "--dir=/home/lukas/routino/data",
@@ -44,7 +44,7 @@ for way in itertools.combinations(stations, 2):
         gpxNode = dom.firstChild
         length = round(getTrackLength(gpxNode.getElementsByTagName("trk")[0]), 0)  # Länge aus gpx auslesen
 
-        cursor.execute("REPLACE INTO connections (id, start, goal, length) VALUES (%s,%s,%s,%s)",
+        cursor.execute("REPLACE INTO connections_test (id, start, goal, length) VALUES (%s,%s,%s,%s)",
                        (routeID, way[0][2], way[1][2], length))  # in db eintragen
     except subprocess.CalledProcessError as exception:
         print()  # Neue Zeile
