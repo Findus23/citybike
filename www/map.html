@@ -12,11 +12,23 @@
         html, body, #map {
             height: 100%;
         }
+
+        #search {
+            pointer-events: auto;
+        }
+        #search input {
+            margin:20px;
+        }
     </style>
 
 </head>
 <body>
-<div id="map"></div>
+<div id="map">
+</div>
+<div class="leaflet-bottom" id="search">
+    <input type="text" placeholder="Search" autocomplete="off">
+    <input type="text" placeholder="Search" autocomplete="off">
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -46,7 +58,7 @@
 
     $.ajax({
         dataType: "json",
-        url: "test.json",
+        url: "nearest.json",
         success: function (data) {
             lines.addData(data);
             lines.addTo(map);
@@ -70,7 +82,7 @@
 
     $.ajax({
         dataType: "json",
-        url: "stations.json",
+        url: "stationLayer.json",
         success: function (data) {
             stationLayer.addData(data);
             stationLayer.addTo(map);
@@ -128,7 +140,5 @@
         "Stationen": stationLayer
     };
     var control = L.control.layers(mapLayers, overlays, {collapsed: false}).addTo(map);
-
-
 </script>
 </html>

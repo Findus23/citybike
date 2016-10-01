@@ -21,7 +21,7 @@ for station in stationList:
     sql = '''
 SELECT
   id, start, goal
-FROM connections_test
+FROM connections
   LEFT JOIN stationen ON (start = ref OR goal = ref)
 WHERE ref = {ref}
 ORDER BY length
