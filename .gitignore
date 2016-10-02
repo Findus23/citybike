@@ -4,3 +4,5 @@ gpxlen.py
 quickest*
 config.py
 __pycache__
+www/stationLayer.json
+www/nearest.json

@@ -20,10 +20,10 @@ limit = 5
 for station in stationList:
     sql = '''
 SELECT
-  id, start, goal
+  id, start, goal, length
 FROM connections
   LEFT JOIN stationen ON (start = ref OR goal = ref)
-WHERE ref = {ref}
+WHERE ref = {ref} AND start != goal
 ORDER BY length
 LIMIT {limit}
 '''.format(ref=station[0], limit=limit)
@@ -40,6 +40,7 @@ LIMIT {limit}
             del feature["properties"]["desc"], feature["properties"]["name"]  # Überreste von GPX entfernen
             feature["properties"]["nodes"] = [way[1], way[2]]
             feature["properties"]["id"] = way[0]
+            feature["properties"]["wayLength"] = way[3]
             geojsonFeatures.append(feature)
         else:
             print(str(way[0]) + ": Dup")

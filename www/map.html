@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CityBikes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"/>
     <style>
         body {
             margin: 0;
@@ -16,8 +16,13 @@
         #search {
             pointer-events: auto;
         }
+
         #search input {
-            margin:20px;
+            margin: 20px;
+        }
+
+        .leaflet-popup-content {
+            font-size: medium;
         }
     </style>
 
@@ -30,23 +35,23 @@
     <input type="text" placeholder="Search" autocomplete="off">
 </div>
 </body>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 <script>
-
     var map = L.map('map').setView([48.51579416571888, 15.6255304813385], 16);
     var layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
     var emptyLayer = L.tileLayer("").addTo(map);
 
     var citybikeIcon = L.Icon.extend({
         options: {
             iconUrl: "citybike.png",
-            iconAnchor: [16, 16],
-            popupAnchor: [0, -16]
+            iconAnchor: [8, 8],
+            popupAnchor: [0, -8],
+            iconSize: [16, 16]
         }
     });
     var altCitybikeIcon = citybikeIcon.extend({
@@ -54,7 +59,6 @@
             iconUrl: "citybikeAlt.png"
         }
     });
-
 
     $.ajax({
         dataType: "json",
@@ -77,6 +81,14 @@
             stations[feature.properties.ref] = feature.properties.name;
             layer.bindPopup(feature.properties.name);
             layer._leaflet_id = 10000 + feature.properties.ref;
+            layer.on({ //Icons beim hover verdunkeln
+                mouseover: function (e) {
+                    layer.setIcon(new altCitybikeIcon());
+                },
+                mouseout: function (e) {
+                    layer.setIcon(new citybikeIcon());
+                }
+            })
         }
     });
 
@@ -93,8 +105,6 @@
     function onEachFeature(feature, layer) {
         layer.on({
             mouseover: function (e) {
-                var layer = e.target;
-
                 layer.setStyle({
                     weight: 10,
                     color: '#666'
@@ -110,16 +120,16 @@
                 lines.resetStyle(e.target);
                 stationLayer.getLayer(10000 + layer.nodes[0]).setIcon(new citybikeIcon());
                 stationLayer.getLayer(10000 + layer.nodes[1]).setIcon(new citybikeIcon());
-
             }
         });
-
     }
-
 
     var lines = L.geoJson(null, {
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(stations[feature.properties.nodes[0]] + " - " + stations[feature.properties.nodes[1]]);
+            var popupText = stations[feature.properties.nodes[0]] + " &xharr; " + stations[feature.properties.nodes[1]] + "<br>" +
+                    feature.properties.wayLength / 1000 + " km";
+            layer.bindPopup(popupText);
+
             onEachFeature(feature, layer);
             layer.nodes = feature.properties.nodes;
 //            layer._leaflet_id = feature.properties.id;
@@ -129,7 +139,12 @@
             weight: 5
         }
     });
-
+    lines.getAttribution = function () {
+        return "Routing mit <a href='http://www.routino.org/'>Routino</a>";
+    };
+    stationLayer.getAttribution = function () {
+        return "Icon Open Data Wien (<a href='http://creativecommons.org/licenses/by/3.0/at/deed.de'>CC BY 3.0 AT</a>)";
+    };
 
     var mapLayers = {
         'Standard': layer,
