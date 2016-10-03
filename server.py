@@ -35,6 +35,8 @@ def hello_world():
         abort(400)
     cur.execute("SELECT id FROM connections WHERE start = %s AND goal = %s", [request.args["from"], request.args["to"]])
     result = cur.fetchone()
+    if not result:
+        abort(404)
     return redirect(url_for("get_connection", connection_id=int(result[0])))
 
 

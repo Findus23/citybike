@@ -62,7 +62,7 @@
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
-    var emptyLayer = L.tileLayer("").addTo(map);
+    var emptyLayer = L.tileLayer("", {maxZoom: 19}).addTo(map);
 
     var citybikeIcon = L.Icon.extend({
         options: {
@@ -166,7 +166,6 @@
                 success: function (data) {
                     lines.addData(data);
                     lines.addTo(map);
-                    console.log(linesArray);
                 }
             });
         }
@@ -229,9 +228,11 @@
             from: fromId,
             to: toId
         }).done(function (data) {
-
             lines.addData(data);
-
+            var id = data.features[0].properties.id;
+            lines.getLayer(linesArray[id]["leafletId"]).openPopup();
+            var bounds = lines.getLayer(linesArray[id]["leafletId"]).getBounds();
+            map.flyToBounds(bounds);
         });
         $(".clearButton").on("click", function () {
                     var allLines = lines.getLayers();
