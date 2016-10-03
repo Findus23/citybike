@@ -8,6 +8,8 @@ SELECT
 FROM connections
   LEFT JOIN stationen AS s ON start = s.ref
   LEFT JOIN stationen AS g ON goal = g.ref
+
+WHERE start != goal
 ORDER BY length ASC;
 
 # Suche nach Namen
@@ -36,6 +38,7 @@ FROM (SELECT
         ref
       FROM connections
         LEFT JOIN stationen ON (start = ref OR goal = ref)
+      WHERE start != goal
       ORDER BY length ASC) AS x
 GROUP BY ref
-ORDER BY length ASC
+ORDER BY length DESC

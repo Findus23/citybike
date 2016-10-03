@@ -41,6 +41,7 @@ LIMIT {limit}
             feature["properties"]["nodes"] = [way[1], way[2]]
             feature["properties"]["id"] = way[0]
             feature["properties"]["wayLength"] = way[3]
+            feature["properties"]["nearest"] = True
             geojsonFeatures.append(feature)
         else:
             print(str(way[0]) + ": Dup")

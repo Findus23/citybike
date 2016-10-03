@@ -15,7 +15,7 @@
             height: 100%;
         }
 
-        #search {
+        .leaflet-control-custom {
             pointer-events: auto;
         }
 
@@ -25,6 +25,13 @@
 
         .leaflet-popup-content {
             font-size: medium;
+        }
+
+        .clearButton {
+            width: 10%;
+            background-color: white;
+            display: inline-block;
+            cursor: pointer;
         }
     </style>
 
@@ -71,14 +78,6 @@
         }
     });
 
-    $.ajax({
-        dataType: "json",
-        url: "nearest.json",
-        success: function (data) {
-            lines.addData(data);
-            lines.addTo(map);
-        }
-    });
     var stations = {};
 
     var stationLayer = L.geoJson(null, {
@@ -86,12 +85,8 @@
             return L.marker(latlng, {icon: new citybikeIcon()});
         },
         onEachFeature: function (feature, layer) {
-//            layer._leaflet_id = feature.properties.ref;
-//            console.log(feature.properties.ref);
-//            console.log(feature.properties);
-            stations[feature.properties.ref] = feature.properties.name;
+            stations[feature.properties.ref] = {name: feature.properties.name, leafletId: L.stamp(layer)};
             layer.bindPopup(feature.properties.name);
-            layer._leaflet_id = 10000 + feature.properties.ref;
             layer.on({ //Icons beim hover verdunkeln
                 mouseover: function (e) {
                     layer.setIcon(new altCitybikeIcon());
@@ -102,16 +97,6 @@
             });
             var option = new Option(feature.properties.name, feature.properties.ref);
             $("select").append(option)
-        }
-    });
-
-    $.ajax({
-        dataType: "json",
-        url: "stationLayer.json",
-        success: function (data) {
-            stationLayer.addData(data);
-            stationLayer.addTo(map);
-            map.fitBounds(stationLayer.getBounds());
         }
     });
 
@@ -126,32 +111,68 @@
                 if (!L.Browser.ie && !L.Browser.opera) {
                     layer.bringToFront();
                 }
-                stationLayer.getLayer(10000 + layer.nodes[0]).setIcon(new altCitybikeIcon());
-                stationLayer.getLayer(10000 + layer.nodes[1]).setIcon(new altCitybikeIcon());
+                stationLayer.getLayer(stations[layer.nodes[0]]["leafletId"]).setIcon(new altCitybikeIcon());
+                stationLayer.getLayer(stations[layer.nodes[1]]["leafletId"]).setIcon(new altCitybikeIcon());
             },
             mouseout: function (e) {
                 lines.resetStyle(e.target);
-                stationLayer.getLayer(10000 + layer.nodes[0]).setIcon(new citybikeIcon());
-                stationLayer.getLayer(10000 + layer.nodes[1]).setIcon(new citybikeIcon());
+                if (!feature.properties.nearest) {
+                    layer.setStyle({
+                        weight: 10,
+                        color: '#E82C0C'
+                    });
+                }
+                stationLayer.getLayer(stations[layer.nodes[0]]["leafletId"]).setIcon(new citybikeIcon());
+                stationLayer.getLayer(stations[layer.nodes[1]]["leafletId"]).setIcon(new citybikeIcon());
             }
         });
     }
-
+    var linesArray = {};
     var lines = L.geoJson(null, {
         onEachFeature: function (feature, layer) {
-            var popupText = stations[feature.properties.nodes[0]] + " &xharr; " + stations[feature.properties.nodes[1]] + "<br>" +
+            var popupText = stations[feature.properties.nodes[0]]["name"] +
+                    " &xharr; " + stations[feature.properties.nodes[1]]["name"]
+                    + "<br>" +
                     feature.properties.wayLength / 1000 + " km";
             layer.bindPopup(popupText);
+            linesArray[feature.properties.id] = {leafletId: L.stamp(layer)};
+
+            if (!feature.properties.nearest) {
+                layer.setStyle({
+                    weight: 10,
+                    color: '#E82C0C'
+                });
+            }
 
             onEachFeature(feature, layer);
             layer.nodes = feature.properties.nodes;
-//            layer._leaflet_id = feature.properties.id;
 
         },
         style: {
             weight: 5
         }
     });
+
+    $.ajax({
+        dataType: "json",
+        url: "stationLayer.json",
+        success: function (data) {
+            stationLayer.addData(data);
+            stationLayer.addTo(map);
+            map.fitBounds(stationLayer.getBounds());
+            $.ajax({
+                dataType: "json",
+                url: "nearest.json",
+                success: function (data) {
+                    lines.addData(data);
+                    lines.addTo(map);
+                    console.log(linesArray);
+                }
+            });
+        }
+    });
+
+
     lines.getAttribution = function () {
         return "Routing mit <a href='http://www.routino.org/'>Routino</a>";
     };
@@ -177,12 +198,15 @@
         onAdd: function (map) {
             var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
 
-            container.style.backgroundColor = 'white';
             container.style.width = '50vw';
             var select1 = L.DomUtil.create("select", 'stationSelect', container);
             var select2 = L.DomUtil.create("select", 'stationSelect', container);
-            select1.style.width = "50%";
-            select2.style.width = "50%";
+            var clearButton = L.DomUtil.create("div", 'clearButton', container);
+            select1.style.width = "45%";
+            select2.style.width = "45%";
+            clearButton.style.width = "10%";
+            clearButton.textContent = "Clear";
+
             select1.appendChild(new Option);
             select2.appendChild(new Option);
             return container;
@@ -201,6 +225,24 @@
             return false;
         }
         console.info(fromId + "->" + toId);
+        $.getJSON("http://127.0.0.1:5000/api/connection/", {
+            from: fromId,
+            to: toId
+        }).done(function (data) {
+
+            lines.addData(data);
+
+        });
+        $(".clearButton").on("click", function () {
+                    var allLines = lines.getLayers();
+                    for (i = 1; i < allLines.length; i++) {
+                        var currentLine = allLines[i];
+                        if (!currentLine.feature.properties.nearest) {
+                            lines.removeLayer(currentLine);
+                        }
+                    }
+                }
+        )
     })
 
 
