@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>CityBikes</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/select2/4.0.3/css/select2.min.css"
+          integrity="sha256-xJOZHfpxLR/uhh1BwYFS5fhmOAdIRQaiOul5F/b7v3s=" crossorigin="anonymous">
     <style>
         body {
             margin: 0;
@@ -17,7 +19,7 @@
             pointer-events: auto;
         }
 
-        #search input {
+        #search select {
             margin: 20px;
         }
 
@@ -30,14 +32,23 @@
 <body>
 <div id="map">
 </div>
+<!--
 <div class="leaflet-bottom" id="search">
-    <input type="text" placeholder="Search" autocomplete="off">
-    <input type="text" placeholder="Search" autocomplete="off">
+    <select class="stationSelect" multiple="multiple" style="width: 150%;">
+        <option value="1234">Testort</option>
+        <option value="1235">Noch eine Station</option>
+    </select>
 </div>
+-->
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/select2/4.0.3/js/select2.min.js"
+        integrity="sha256-+mWd/G69S4qtgPowSELIeVAv7+FuL871WXaolgXnrwQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/select2/4.0.3/js/i18n/de.js"
+        integrity="sha256-mtjCIpmIYVw5CLf7IpjBWp6VtFzdKh/YtZFtpIeIStc=" crossorigin="anonymous"></script>
+
 <script>
     var map = L.map('map').setView([48.51579416571888, 15.6255304813385], 16);
     var layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -88,7 +99,9 @@
                 mouseout: function (e) {
                     layer.setIcon(new citybikeIcon());
                 }
-            })
+            });
+            var option = new Option(feature.properties.name, feature.properties.ref);
+            $("select").append(option)
         }
     });
 
@@ -155,5 +168,41 @@
         "Stationen": stationLayer
     };
     var control = L.control.layers(mapLayers, overlays, {collapsed: false}).addTo(map);
+
+
+    var customControl = L.Control.extend({
+        options: {
+            position: 'bottomleft'
+        },
+        onAdd: function (map) {
+            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+
+            container.style.backgroundColor = 'white';
+            container.style.width = '50vw';
+            var select1 = L.DomUtil.create("select", 'stationSelect', container);
+            var select2 = L.DomUtil.create("select", 'stationSelect', container);
+            select1.style.width = "50%";
+            select2.style.width = "50%";
+            select1.appendChild(new Option);
+            select2.appendChild(new Option);
+            return container;
+        }
+    });
+    map.addControl(new customControl);
+    var stationSelect = $(".stationSelect");
+    stationSelect.select2({
+        placeholder: "Stationen auswählen",
+        allowClear: true
+    });
+    stationSelect.on("select2:select", function (event) {
+        var fromId = stationSelect.first().val();
+        var toId = stationSelect.last().val();
+        if (!fromId || !toId) {
+            return false;
+        }
+        console.info(fromId + "->" + toId);
+    })
+
+
 </script>
 </html>
