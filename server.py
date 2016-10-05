@@ -14,6 +14,7 @@ from flask import send_from_directory
 from flask import url_for
 
 from config import database
+import top
 
 db = MySQLdb.connect(database["host"],
                      database["user"],
@@ -28,7 +29,7 @@ app.config.update(
 
 
 @app.route('/api/connection/', methods=["GET"])
-def hello_world():
+def getConnection():
     if not request.args \
             or 'from' not in request.args or 'to' not in request.args \
             or not request.args["from"].isdigit() or not request.args["to"].isdigit():
@@ -68,6 +69,14 @@ def get_connection(connection_id):
         except subprocess.CalledProcessError:
             abort(404)
         return jsonify(geojson)
+
+
+@app.route('/api/top/', methods=["GET"])
+def get_top():
+    if not request.args \
+            or 'type' not in request.args:
+        abort(400)
+    return jsonify(top.helloworld(cur, request.args["type"]))
 
 
 @app.route('/')
