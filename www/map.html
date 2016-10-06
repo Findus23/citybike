@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CityBikes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/select2/4.0.3/css/select2.min.css"
           integrity="sha256-xJOZHfpxLR/uhh1BwYFS5fhmOAdIRQaiOul5F/b7v3s=" crossorigin="anonymous">
@@ -57,7 +58,7 @@
         integrity="sha256-mtjCIpmIYVw5CLf7IpjBWp6VtFzdKh/YtZFtpIeIStc=" crossorigin="anonymous"></script>
 
 <script>
-    var map = L.map('map').setView([48.51579416571888, 15.6255304813385], 16);
+    var map = L.map('map',{zoomSnap: 0.5}).setView([48.51579416571888, 15.6255304813385], 16);
     var layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
