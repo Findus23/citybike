@@ -224,7 +224,7 @@
             return false;
         }
         console.info(fromId + "->" + toId);
-        $.getJSON("http://127.0.0.1:5000/api/connection/", {
+        $.getJSON("/api/connection/", {
             from: fromId,
             to: toId
         }).done(function (data) {
