@@ -61,14 +61,14 @@
         integrity="sha256-mtjCIpmIYVw5CLf7IpjBWp6VtFzdKh/YtZFtpIeIStc=" crossorigin="anonymous"></script>
 
 <script>
-    var map = L.map('map',{zoomSnap: 0.5}).setView([48.51579416571888, 15.6255304813385], 16);
+    var map = L.map('map', {zoomSnap: 0.5}).setView([48.51579416571888, 15.6255304813385], 16);
     var layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
     var emptyLayer = L.tileLayer("", {maxZoom: 19}).addTo(map);
 
-    var citybikeIcon = L.Icon.extend({
+    var citybikeIconClass = L.Icon.extend({
         options: {
             iconUrl: "citybike.png",
             iconAnchor: [8, 8],
@@ -76,27 +76,29 @@
             iconSize: [16, 16]
         }
     });
-    var altCitybikeIcon = citybikeIcon.extend({
+    var citybikeIcon = new citybikeIconClass;
+    var altCitybikeIconClass = citybikeIconClass.extend({
         options: {
             iconUrl: "citybikeAlt.png"
         }
     });
+    var altCitybikeIcon = new altCitybikeIconClass;
 
     var stations = {};
 
     var stationLayer = L.geoJson(null, {
         pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {icon: new citybikeIcon()});
+            return L.marker(latlng, {icon: citybikeIcon});
         },
         onEachFeature: function (feature, layer) {
             stations[feature.properties.ref] = {name: feature.properties.name, leafletId: L.stamp(layer)};
             layer.bindPopup(feature.properties.name);
             layer.on({ //Icons beim hover verdunkeln
                 mouseover: function (e) {
-                    layer.setIcon(new altCitybikeIcon());
+                    layer.setIcon(altCitybikeIcon);
                 },
                 mouseout: function (e) {
-                    layer.setIcon(new citybikeIcon());
+                    layer.setIcon(citybikeIcon);
                 }
             });
             var option = new Option(feature.properties.name, feature.properties.ref);
@@ -115,8 +117,8 @@
                 if (!L.Browser.ie && !L.Browser.opera) {
                     layer.bringToFront();
                 }
-                stationLayer.getLayer(stations[layer.nodes[0]]["leafletId"]).setIcon(new altCitybikeIcon());
-                stationLayer.getLayer(stations[layer.nodes[1]]["leafletId"]).setIcon(new altCitybikeIcon());
+                stationLayer.getLayer(stations[layer.nodes[0]]["leafletId"]).setIcon(altCitybikeIcon);
+                stationLayer.getLayer(stations[layer.nodes[1]]["leafletId"]).setIcon(altCitybikeIcon);
             },
             mouseout: function (e) {
                 lines.resetStyle(e.target);
@@ -126,8 +128,8 @@
                         color: '#E82C0C'
                     });
                 }
-                stationLayer.getLayer(stations[layer.nodes[0]]["leafletId"]).setIcon(new citybikeIcon());
-                stationLayer.getLayer(stations[layer.nodes[1]]["leafletId"]).setIcon(new citybikeIcon());
+                stationLayer.getLayer(stations[layer.nodes[0]]["leafletId"]).setIcon(citybikeIcon);
+                stationLayer.getLayer(stations[layer.nodes[1]]["leafletId"]).setIcon(citybikeIcon);
             }
         });
     }
