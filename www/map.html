@@ -236,7 +236,9 @@
         }).done(function (data) {
             lines.addData(data);
             var id = data.features[0].properties.id;
-            lines.getLayer(linesArray[id]["leafletId"]).openPopup();
+            if (map.hasLayer(lines)) {
+                lines.getLayer(linesArray[id]["leafletId"]).openPopup();
+            }
             var bounds = lines.getLayer(linesArray[id]["leafletId"]).getBounds();
             map.flyToBounds(bounds);
         });
