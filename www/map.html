@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/select2/4.0.3/css/select2.min.css"
           integrity="sha256-xJOZHfpxLR/uhh1BwYFS5fhmOAdIRQaiOul5F/b7v3s=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+          integrity="sha256-t2/7smZfgrST4FS1DT0bs/KotCM74XlcqZN5Vu7xlrw=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/tables-min.css"
+          integrity="sha256-4NzXOZY2l6V9ObAblwSPfn2wI5kyZbUMaMVVbMrZDXA=" crossorigin="anonymous"/>
     <style>
         body {
             margin: 0;
@@ -35,7 +39,6 @@
             cursor: pointer;
         }
     </style>
-
 </head>
 <body>
 <div id="map">
@@ -63,6 +66,13 @@
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+    var basemap = L.tileLayer('http://maps{s}.wien.gv.at/basemap/geolandbasemap/normal/google3857/{z}/{y}/{x}.{format}', {
+        maxZoom: 19,
+        attribution: 'Datenquelle: <a href="www.basemap.at">basemap.at</a>',
+        subdomains: ["", "1", "2", "3", "4"],
+        format: 'png',
+        bounds: [[46.35877, 8.782379], [49.037872, 17.189532]]
+    });
     var emptyLayer = L.tileLayer("", {maxZoom: 19});
 
     var citybikeIconClass = L.Icon.extend({
@@ -184,6 +194,7 @@
 
     var mapLayers = {
         'Standard': layer,
+        "basemap.at": basemap,
         "Leer": emptyLayer
     };
     var overlays = {
@@ -250,7 +261,6 @@
                 }
         )
     })
-
-
 </script>
+<script src="sidebar.js"></script>
 </html>
