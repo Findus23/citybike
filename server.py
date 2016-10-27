@@ -12,6 +12,7 @@ from flask import request
 from flask import send_file
 from flask import send_from_directory
 from flask import url_for
+from flask_cache import Cache
 
 from config import database
 import top
@@ -23,6 +24,7 @@ db = MySQLdb.connect(database["host"],
 cur = db.cursor()
 
 app = Flask(__name__)
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 app.config.update(
     JSONIFY_PRETTYPRINT_REGULAR=False
 )
@@ -71,12 +73,19 @@ def get_connection(connection_id):
         return jsonify(geojson)
 
 
+def make_cache_key(*args, **kwargs): return request.url
+
+
 @app.route('/api/top/', methods=["GET"])
+@cache.cached(timeout=50, key_prefix=make_cache_key)
 def get_top():
     if not request.args \
-            or 'type' not in request.args:
+            or 'type' not in request.args \
+            or 'pageSize' not in request.args \
+            or 'pageNumber' not in request.args:
+        print(request.args)
         abort(400)
-    return jsonify(top.helloworld(cur, request.args["type"]))
+    return jsonify(top.helloworld(cur, request.args))
 
 
 @app.route('/')

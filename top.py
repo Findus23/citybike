@@ -1,3 +1,5 @@
+cache = {}
+
 topSQL = {
     "shortestConnections": """
 SELECT
@@ -12,7 +14,7 @@ FROM connections
 
 WHERE start != goal
 ORDER BY length ASC
-LIMIT 10
+LIMIT %s OFFSET %s
 """,
     "farAway": """
 SELECT *
@@ -25,11 +27,16 @@ FROM (SELECT
       WHERE start != goal
       ORDER BY length ASC) AS x
 GROUP BY ref
-ORDER BY length DESC"""
+ORDER BY length DESC
+LIMIT %s OFFSET %s
+"""
 }
 
 
-def helloworld(cursor, top):
-    cursor.execute(topSQL[top])
+def helloworld(cursor, args):
 
+    sql = topSQL[args["type"]]
+    limit = int(args["pageSize"])
+    offset = (int(args["pageNumber"]) - 1) * limit
+    cursor.execute(sql, (limit, offset))
     return cursor.fetchall()
